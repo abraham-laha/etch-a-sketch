@@ -34,7 +34,10 @@ kasten.forEach(box => {
 });
 
 butt.addEventListener('click', (event) => {
-    let rows= prompt('How many boxes in one row/column?');
+    let rows = 0;
+    while(!rows || rows > 60){
+    rows= prompt('How many boxes in one row/column?');
+    }
     deleteGrid();
     createGrid(rows);
     const kasten = document.querySelectorAll('.box');
