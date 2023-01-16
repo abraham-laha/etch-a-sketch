@@ -1,5 +1,5 @@
 const divAußen = document.querySelector('.außen');
-
+const butt = document.querySelector('button');
 
 function createGrid(columns){
 
@@ -21,7 +21,9 @@ function createGrid(columns){
     console.log(`${divAußen.clientHeight}px`);
     divAußen.style.width= `${divAußen.clientHeight}px`;
 }
-
+function deleteGrid(){
+    divAußen.innerHTML ="";
+}
 
 createGrid(20);
 const kasten = document.querySelectorAll('.box');
@@ -30,3 +32,15 @@ kasten.forEach(box => {
         box.classList.add('hovered');
     })
 });
+
+butt.addEventListener('click', (event) => {
+    let rows= prompt('How many boxes in one row/column?');
+    deleteGrid();
+    createGrid(rows);
+    const kasten = document.querySelectorAll('.box');
+    kasten.forEach(box => {
+    box.addEventListener('mouseover', (event) => {
+        box.classList.add('hovered');
+    })
+});
+})
