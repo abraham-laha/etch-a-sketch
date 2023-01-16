@@ -23,4 +23,10 @@ function createGrid(columns){
 }
 
 
-createGrid(5);
+createGrid(20);
+const kasten = document.querySelectorAll('.box');
+kasten.forEach(box => {
+    box.addEventListener('mouseover', (event) => {
+        box.classList.add('hovered');
+    })
+});
